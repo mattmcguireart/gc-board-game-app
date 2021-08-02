@@ -27,7 +27,7 @@ const Search = () => {
       queryStringParameter.mechanic = mechanic;
     }
     if (minPlayers) {
-      queryStringParameter.minPlayers = minPlayers;
+      queryStringParameter.gt_min_players = minPlayers;
     }
     if (maxPlayers) {
       queryStringParameter.maxPlayers = maxPlayers;
