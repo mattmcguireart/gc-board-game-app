@@ -11,7 +11,8 @@ export default interface Game {
   min_playtime: number;
   max_playtime: number;
   min_age: number;
-  description: string;
+  msrp_text: string;
+  description_preview: string;
   thumb_url: string;
   image_url: string;
   categories: Category[];

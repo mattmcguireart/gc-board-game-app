@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Game from "../models/Game";
 import "./GameListItem.css";
 
@@ -12,9 +13,11 @@ const GameListItem = ({ aSingleGame }: Props) => {
         src={aSingleGame.thumb_url}
         alt={`Game Thumbnail for ${aSingleGame.name}`}
       />
-      <p>{aSingleGame.name}</p>
+      <h2>
+        <Link to={`/details/${aSingleGame.id}`}>{aSingleGame.name}</Link>
+      </h2>
       <p>
-        {aSingleGame.min_players}-{aSingleGame.max_players}
+        {aSingleGame.gt_min_players}-{aSingleGame.max_players}
       </p>
       <p>
         {aSingleGame.min_playtime}-{aSingleGame.max_playtime}

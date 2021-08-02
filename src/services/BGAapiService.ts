@@ -30,6 +30,11 @@ export const getGameSearch = async (search: any): Promise<BGAResponse> => {
   if (search.lt_max_playtime) {
     params.lt_max_playtime = search.lt_max_playtime;
   }
+  if (search.id) {
+    params.ids = search.id;
+  }
+  console.log(search);
+  console.log(params);
   const response = await axios.get(
     "https://api.boardgameatlas.com/api/search?",
     { params }
