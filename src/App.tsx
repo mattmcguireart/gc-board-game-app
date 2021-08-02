@@ -10,6 +10,7 @@ import Dashboard from "./components/Dashboard";
 import Header from "./components/Header";
 import LandingPage from "./components/LandingPage";
 import Search from "./components/Search";
+import SearchReturn from "./components/SearchReturn";
 
 function App() {
   return (
@@ -25,6 +26,9 @@ function App() {
           </Route>
           <Route path="/search" exact>
             <Search />
+          </Route>
+          <Route path="/results" exact>
+            <SearchReturn />
           </Route>
           <Route path="/">
             <Redirect to="/" />

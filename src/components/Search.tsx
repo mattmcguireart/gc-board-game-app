@@ -1,6 +1,6 @@
 import { FormEvent, useState } from "react";
 import { useHistory } from "react-router-dom";
-import { URLSearchParams } from "url";
+
 import "./Search.css";
 
 const Search = () => {
@@ -41,7 +41,9 @@ const Search = () => {
     if (resultsLimit) {
       queryStringParameter.resultsLimit = resultsLimit;
     }
-    history.push("/?" + new URLSearchParams(queryStringParameter).toString());
+    history.push(
+      "/results?" + new URLSearchParams(queryStringParameter).toString()
+    );
   };
   return (
     <div className="Search">
@@ -61,6 +63,7 @@ const Search = () => {
           value={category}
           onChange={(e) => setCategory(e.target.value)}
         >
+          <option value="">Pick A Category</option>
           <option value="KUBCKBkGxV">Adventure </option>
           <option value="eFaACC6y2c">Apocalyptic </option>
           <option value="wpItJuRDiz">Banking </option>
@@ -106,6 +109,7 @@ const Search = () => {
           value={mechanic}
           onChange={(e) => setMechanic(e.target.value)}
         >
+          <option value="">Pick A Mechanic</option>
           <option value="05zCZoLvQJ">Area Control </option>
           <option value="3tuJiW3pps">Betting </option>
           <option value="ZX3hYcF9H7">Bluffing </option>
