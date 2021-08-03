@@ -6,12 +6,13 @@ import GameList from "./GameList";
 import "./SearchReturn.css";
 
 const SearchReturn = () => {
-  const query = new URLSearchParams(useLocation().search);
+  const searchParams = Object.fromEntries(
+    new URLSearchParams(useLocation().search)
+  );
   const [games, setGames] = useState<Game[]>([]);
 
   useEffect(() => {
-    getGameSearch(query).then((data) => {
-      console.log(data.games);
+    getGameSearch(searchParams).then((data) => {
       setGames(data.games);
     });
   }, []);

@@ -6,11 +6,11 @@ export default interface Game {
   id: string;
   name: string;
   url: string;
-  min_players: number;
-  max_players: number;
-  min_playtime: number;
-  max_playtime: number;
-  min_age: number;
+  gt_min_players: number;
+  lt_max_players: number;
+  gt_min_playtime: number;
+  lt_max_playtime: number;
+  gt_min_age: number;
   msrp_text: string;
   description_preview: string;
   thumb_url: string;
