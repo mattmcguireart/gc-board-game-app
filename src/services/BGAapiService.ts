@@ -45,6 +45,11 @@ export const getGameSearch = async (search: any): Promise<BGAResponse> => {
   return response.data;
 };
 
+export const getGameList = async (uid: string): Promise<BGAResponse[]> => {
+  const response = await axios.get(baseUrl! + `/${encodeURIComponent(uid)}`);
+  return response.data;
+};
+
 export const postGameToList = async (game: Game): Promise<BGAResponse> => {
   const response = await axios.post(baseUrl!, game);
   return response.data;

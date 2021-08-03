@@ -13,7 +13,7 @@ const Details = () => {
 
   const [game, setGame] = useState<Game>();
   useEffect(() => {
-    getGameSearch({ id }).then((data) => {
+    getGameSearch({ ids: id }).then((data) => {
       setGame(data.games[0]);
       console.log(game);
     });
