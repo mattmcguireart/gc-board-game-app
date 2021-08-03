@@ -21,25 +21,25 @@ const Search = () => {
       queryStringParameter.name = name;
     }
     if (category) {
-      queryStringParameter.category = category;
+      queryStringParameter.categories = category;
     }
     if (mechanic) {
-      queryStringParameter.mechanic = mechanic;
+      queryStringParameter.mechanics = mechanic;
     }
     if (minPlayers) {
       queryStringParameter.gt_min_players = minPlayers;
     }
     if (maxPlayers) {
-      queryStringParameter.maxPlayers = maxPlayers;
+      queryStringParameter.lt_max_players = maxPlayers;
     }
     if (minPlaytime) {
-      queryStringParameter.minPlaytime = minPlaytime;
+      queryStringParameter.gt_min_playtime = minPlaytime;
     }
     if (maxPlaytime) {
-      queryStringParameter.maxPlaytime = maxPlaytime;
+      queryStringParameter.lt_max_playtime = maxPlaytime;
     }
     if (resultsLimit) {
-      queryStringParameter.resultsLimit = resultsLimit;
+      queryStringParameter.limit = resultsLimit;
     }
     history.push(
       "/results?" + new URLSearchParams(queryStringParameter).toString()

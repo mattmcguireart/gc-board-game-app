@@ -17,11 +17,13 @@ const GameListItem = ({ aSingleGame }: Props) => {
         <Link to={`/details/${aSingleGame.id}`}>{aSingleGame.name}</Link>
       </h2>
       <p>
-        {aSingleGame.gt_min_players}-{aSingleGame.max_players}
+        {aSingleGame.gt_min_players}-{aSingleGame.lt_max_players}
       </p>
       <p>
-        {aSingleGame.min_playtime}-{aSingleGame.max_playtime}
+        {aSingleGame.gt_min_playtime}-{aSingleGame.lt_max_playtime}
       </p>
+      <button>Add to My Games</button>
+      <button>Add to My Wishlist</button>
     </div>
   );
 };
