@@ -4,9 +4,10 @@ import "./GameListItem.css";
 
 interface Props {
   aSingleGame: Game;
+  addGameToList: (game: Game) => void;
 }
 
-const GameListItem = ({ aSingleGame }: Props) => {
+const GameListItem = ({ aSingleGame, addGameToList }: Props) => {
   return (
     <div className="GameListItem">
       <img

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import Game from "../models/Game";
-import { getGameSearch } from "../services/BGAapiService";
+import { getGameSearch, postGameToList } from "../services/BGAapiService";
 import GameList from "./GameList";
 import "./SearchReturn.css";
 
@@ -11,6 +11,10 @@ const SearchReturn = () => {
   );
   const [games, setGames] = useState<Game[]>([]);
 
+  const addGameToList = async (game: Game) => {
+    await postGameToList(game);
+  };
+
   useEffect(() => {
     getGameSearch(searchParams).then((data) => {
       setGames(data.games);
@@ -18,7 +22,7 @@ const SearchReturn = () => {
   }, []);
   return (
     <div className="SearchReturn">
-      <GameList games={games} />
+      <GameList games={games} addGameToList={addGameToList} />
     </div>
   );
 };

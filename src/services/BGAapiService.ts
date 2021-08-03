@@ -2,6 +2,8 @@ import axios from "axios";
 import BGAResponse from "../models/BGAResponse";
 import Game from "../models/Game";
 
+const baseUrl = process.env.REACT_APP_API_URL;
+
 export const getGameSearch = async (search: any): Promise<BGAResponse> => {
   let params: any = { client_id: "1FoN8rvM9B" };
   if (search.name) {
@@ -44,9 +46,6 @@ export const getGameSearch = async (search: any): Promise<BGAResponse> => {
 };
 
 export const postGameToList = async (game: Game): Promise<BGAResponse> => {
-  const response = await axios.post(
-    "mongodb+srv://admin:kombucha@cluster0.mfefa.mongodb.net/boardGameAppDB?retryWrites=true&w=majority",
-    game
-  );
+  const response = await axios.post(baseUrl!, game);
   return response.data;
 };
