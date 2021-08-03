@@ -17,4 +17,7 @@ export default interface Game {
   image_url: string;
   categories: Category[];
   mechanics: Mechanic[];
+  uid?: string;
+  my_games_list?: boolean;
+  wish_list?: boolean;
 }

@@ -1,5 +1,4 @@
 import { useContext, useEffect } from "react";
-import { Link } from "react-router-dom";
 import { AuthContext } from "../context/auth-context";
 import { signInWithGoogle, signOut } from "../firebaseConfig";
 import { getGameSearch } from "../services/BGAapiService";

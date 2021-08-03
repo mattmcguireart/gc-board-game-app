@@ -19,7 +19,7 @@ const SearchReturn = () => {
     getGameSearch(searchParams).then((data) => {
       setGames(data.games);
     });
-  }, []);
+  }, [searchParams]);
   return (
     <div className="SearchReturn">
       <GameList games={games} addGameToList={addGameToList} />

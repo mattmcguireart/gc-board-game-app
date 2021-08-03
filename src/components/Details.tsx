@@ -17,11 +17,11 @@ const Details = () => {
       setGame(data.games[0]);
       console.log(game);
     });
-  }, []);
+  }, [id, game]);
   return (
     <div className="Details">
       <h2>{game?.name}</h2>
-      <img src={game?.image_url} alt={`Picture of ${game?.name}`} />
+      <img src={game?.image_url} alt={`${game?.name}`} />
       <p>{game?.description_preview}</p>
       <p>
         Number of Players: {game?.gt_min_players} - {game?.lt_max_players}
