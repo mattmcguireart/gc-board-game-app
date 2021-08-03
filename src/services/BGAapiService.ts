@@ -1,5 +1,6 @@
 import axios from "axios";
 import BGAResponse from "../models/BGAResponse";
+import Game from "../models/Game";
 
 export const getGameSearch = async (search: any): Promise<BGAResponse> => {
   let params: any = { client_id: "1FoN8rvM9B" };
@@ -38,6 +39,14 @@ export const getGameSearch = async (search: any): Promise<BGAResponse> => {
   const response = await axios.get(
     "https://api.boardgameatlas.com/api/search?",
     { params }
+  );
+  return response.data;
+};
+
+export const postGameToList = async (game: Game): Promise<BGAResponse> => {
+  const response = await axios.post(
+    "mongodb+srv://admin:kombucha@cluster0.mfefa.mongodb.net/boardGameAppDB?retryWrites=true&w=majority",
+    game
   );
   return response.data;
 };
