@@ -4,11 +4,14 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { AuthContextProvider } from "./context/auth-context";
+import GamesContextProvider from "./context/GamesContextProvider";
 
 ReactDOM.render(
   <React.StrictMode>
     <AuthContextProvider>
-      <App />
+      <GamesContextProvider>
+        <App />
+      </GamesContextProvider>
     </AuthContextProvider>
   </React.StrictMode>,
   document.getElementById("root")

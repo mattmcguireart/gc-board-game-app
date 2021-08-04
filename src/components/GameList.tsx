@@ -5,18 +5,14 @@ import GameListItem from "./GameListItem";
 
 interface Props {
   games: Game[];
-  addGameToList: (game: Game) => void;
 }
 
-const GameList = ({ games, addGameToList }: Props) => {
-  console.log(games);
+const GameList = ({ games }: Props) => {
   return (
     <div className="GameList">
       <ul>
         {games.map((game) => {
-          return (
-            <GameListItem aSingleGame={game} addGameToList={addGameToList} />
-          );
+          return <GameListItem aSingleGame={game} key={game.id} />;
         })}
       </ul>
     </div>

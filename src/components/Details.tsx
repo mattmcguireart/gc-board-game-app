@@ -17,7 +17,7 @@ const Details = () => {
       setGame(data.games[0]);
       console.log(game);
     });
-  }, [id, game]);
+  }, [id]);
   return (
     <div className="Details">
       <h2>{game?.name}</h2>
