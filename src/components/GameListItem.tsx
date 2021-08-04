@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../context/auth-context";
 import GamesContext from "../context/GamesContext";
 import Game from "../models/Game";
+import { removeGameFromList } from "../services/BGAapiService";
 import "./GameListItem.css";
 
 interface Props {
@@ -25,7 +26,14 @@ const GameListItem = ({ aSingleGame }: Props) => {
       (game) =>
         game.uid === user!.uid && game.wish_list && game.id === aSingleGame.id
     );
-
+  const callDelete = (): void => {
+    const found = userGames.find((item) => {
+      return item.uid === user!.uid && item.id === aSingleGame.id;
+    });
+    if (found) {
+      removeGameFromList(found._id!);
+    }
+  };
   return (
     <div className="GameListItem">
       <img
@@ -57,7 +65,7 @@ const GameListItem = ({ aSingleGame }: Props) => {
               Add to My Games
             </button>
           ) : (
-            <button>Remove from My Game</button>
+            <button onClick={() => callDelete()}>Remove from My Game</button>
           )}
           {!checkWishList() ? (
             <button
@@ -72,7 +80,9 @@ const GameListItem = ({ aSingleGame }: Props) => {
               Add to My Wishlist
             </button>
           ) : (
-            <button>Remove from my Wishlist</button>
+            <button onClick={() => callDelete()}>
+              Remove from my Wishlist
+            </button>
           )}
         </div>
       )}

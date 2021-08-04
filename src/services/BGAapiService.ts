@@ -23,3 +23,8 @@ export const postGameToList = async (game: Game): Promise<Game> => {
   const response = await axios.post(baseUrl!, game);
   return response.data;
 };
+
+export const removeGameFromList = async (id: string): Promise<void> => {
+  const response = await axios.delete(baseUrl! + `/${encodeURIComponent(id)}`);
+  return response.data;
+};

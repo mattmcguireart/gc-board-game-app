@@ -1,6 +1,10 @@
 import { ReactNode, useContext, useEffect, useState } from "react";
 import Game from "../models/Game";
-import { getGameList, postGameToList } from "../services/BGAapiService";
+import {
+  getGameList,
+  postGameToList,
+  removeGameFromList,
+} from "../services/BGAapiService";
 import { AuthContext } from "./auth-context";
 import GamesContext from "./GamesContext";
 
@@ -27,7 +31,12 @@ const GamesContextProvider = ({ children }: Props) => {
     });
   };
 
-  const removeFromMyGames = () => {};
+  const removeFromMyGames = async (id: string): Promise<void> => {
+    await removeGameFromList(id);
+    getGameList(user!.uid).then((data) => {
+      setUserGames(data);
+    });
+  };
 
   return (
     <GamesContext.Provider
