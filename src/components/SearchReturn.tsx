@@ -1,12 +1,7 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import { AuthContext } from "../context/auth-context";
 import Game from "../models/Game";
-import {
-  getGameList,
-  getGameSearch,
-  postGameToList,
-} from "../services/BGAapiService";
+import { getGameSearch } from "../services/BGAapiService";
 import GameList from "./GameList";
 import "./SearchReturn.css";
 

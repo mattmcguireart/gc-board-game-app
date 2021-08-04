@@ -1,10 +1,14 @@
-import { Link } from "react-router-dom";
 import "./Dashboard.css";
 
 const Dashboard = () => {
   return (
     <div className="Dashboard">
-      <Link to="/search">Search</Link>
+      dashboard
+      {/* my feed -- from Preferences */}
+      {/* my games list */}
+      {/* wishlist */}
+      {/* recommend me a game */}
+      <button>Recommend me a game</button>
     </div>
   );
 };

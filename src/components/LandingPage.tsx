@@ -1,6 +1,5 @@
 import { useContext } from "react";
 import { AuthContext } from "../context/auth-context";
-import { signInWithGoogle, signOut } from "../firebaseConfig";
 import Dashboard from "./Dashboard";
 import "./LandingPage.css";
 import Preferences from "./Preferences";
@@ -10,18 +9,16 @@ const LandingPage = () => {
 
   return (
     <div className="LandingPage">
-      <p>Landing Page</p>
       {user ? (
         <div>
-          <p>{user.displayName}</p>
-          <button onClick={signOut}>Sign Out</button>
+          <Dashboard />
         </div>
       ) : (
-        <button onClick={signInWithGoogle}>Sign in with Google</button>
+        <div>
+          <p>Select your preferences, or sign in</p>
+          <Preferences />
+        </div>
       )}
-      <Preferences />
-      {/* only show preferences when not signed in  */}
-      <Dashboard />
     </div>
   );
 };

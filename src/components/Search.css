@@ -1,0 +1,10 @@
+.Search .search-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 75%;
+}
+
+.Search .search-button {
+  width: 100px;
+}

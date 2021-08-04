@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../context/auth-context";
 import GamesContext from "../context/GamesContext";
 import Game from "../models/Game";
-import { removeGameFromList } from "../services/BGAapiService";
 import "./GameListItem.css";
 
 interface Props {
@@ -12,7 +11,8 @@ interface Props {
 
 const GameListItem = ({ aSingleGame }: Props) => {
   const { user } = useContext(AuthContext);
-  const { addToMyGames, userGames } = useContext(GamesContext);
+  const { addToMyGames, userGames, removeFromMyGames } =
+    useContext(GamesContext);
   const checkMyGames = () => {
     return userGames.some(
       (game) =>
@@ -26,12 +26,26 @@ const GameListItem = ({ aSingleGame }: Props) => {
       (game) =>
         game.uid === user!.uid && game.wish_list && game.id === aSingleGame.id
     );
-  const callDelete = (): void => {
+  const deleteFromMyGames = (): void => {
     const found = userGames.find((item) => {
-      return item.uid === user!.uid && item.id === aSingleGame.id;
+      return (
+        item.uid === user!.uid &&
+        item.id === aSingleGame.id &&
+        item.my_games_list
+      );
     });
     if (found) {
-      removeGameFromList(found._id!);
+      removeFromMyGames(found._id!);
+    }
+  };
+  const deleteFromWishlist = (): void => {
+    const found = userGames.find((item) => {
+      return (
+        item.uid === user!.uid && item.id === aSingleGame.id && item.wish_list
+      );
+    });
+    if (found) {
+      removeFromMyGames(found._id!);
     }
   };
   return (
@@ -45,10 +59,10 @@ const GameListItem = ({ aSingleGame }: Props) => {
         <Link to={`/details/${aSingleGame.id}`}>{aSingleGame.name}</Link>
       </h2>
       <p>
-        {aSingleGame.gt_min_players}-{aSingleGame.lt_max_players}
+        Players: {aSingleGame.min_players}-{aSingleGame.max_players}
       </p>
       <p>
-        {aSingleGame.gt_min_playtime}-{aSingleGame.lt_max_playtime}
+        Playtime: {aSingleGame.min_playtime}-{aSingleGame.max_playtime}
       </p>
       {user && (
         <div>
@@ -65,7 +79,9 @@ const GameListItem = ({ aSingleGame }: Props) => {
               Add to My Games
             </button>
           ) : (
-            <button onClick={() => callDelete()}>Remove from My Game</button>
+            <button onClick={() => deleteFromMyGames()}>
+              Remove from My Game
+            </button>
           )}
           {!checkWishList() ? (
             <button
@@ -80,7 +96,7 @@ const GameListItem = ({ aSingleGame }: Props) => {
               Add to My Wishlist
             </button>
           ) : (
-            <button onClick={() => callDelete()}>
+            <button onClick={() => deleteFromWishlist()}>
               Remove from my Wishlist
             </button>
           )}
