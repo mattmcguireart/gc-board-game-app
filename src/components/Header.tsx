@@ -14,6 +14,7 @@ const Header = () => {
       </div>
       <nav>
         <Link to="/search">Search</Link>
+        <Link to="/">Dashboard</Link>
       </nav>
 
       {user ? (

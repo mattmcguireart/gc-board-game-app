@@ -58,9 +58,14 @@ const GameListItem = ({ aSingleGame }: Props) => {
       <h2>
         <Link to={`/details/${aSingleGame.id}`}>{aSingleGame.name}</Link>
       </h2>
-      <p>
-        Players: {aSingleGame.min_players}-{aSingleGame.max_players}
-      </p>
+      {aSingleGame.min_players === aSingleGame.max_players ? (
+        <p>Players: {aSingleGame.min_players}</p>
+      ) : (
+        <p>
+          Players: {aSingleGame.min_players}-{aSingleGame.max_players}
+        </p>
+      )}
+
       <p>
         Playtime: {aSingleGame.min_playtime}-{aSingleGame.max_playtime}
       </p>
@@ -80,7 +85,7 @@ const GameListItem = ({ aSingleGame }: Props) => {
             </button>
           ) : (
             <button onClick={() => deleteFromMyGames()}>
-              Remove from My Game
+              Remove from My Games
             </button>
           )}
           {!checkWishList() ? (
