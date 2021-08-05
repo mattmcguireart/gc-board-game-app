@@ -15,14 +15,21 @@ interface Props {
 const GamesContextProvider = ({ children }: Props) => {
   const { user } = useContext(AuthContext);
   const [userGames, setUserGames] = useState<Game[]>([]);
+  const [myGames, setMyGames] = useState<Game[]>([]);
+  const [wishlist, setWishlist] = useState<Game[]>([]);
 
   useEffect(() => {
     if (user) {
       getGameList(user.uid).then((data) => {
         setUserGames(data);
       });
+      if (userGames) {
+        setMyGames(userGames.filter((game) => game.my_games_list));
+        setWishlist(userGames.filter((game) => game.wish_list));
+        console.log(userGames);
+      }
     }
-  }, [user]);
+  }, [user, userGames.length]);
 
   const addToMyGames = async (game: Game): Promise<void> => {
     await postGameToList(game);
@@ -44,6 +51,8 @@ const GamesContextProvider = ({ children }: Props) => {
         userGames,
         addToMyGames,
         removeFromMyGames,
+        myGames,
+        wishlist,
       }}
     >
       {children}
