@@ -28,3 +28,10 @@ export const removeGameFromList = async (id: string): Promise<void> => {
   const response = await axios.delete(baseUrl! + `/${encodeURIComponent(id)}`);
   return response.data;
 };
+
+export const getAverages = async (uid: string): Promise<any> => {
+  const response = await axios.get(
+    baseUrl! + `/recommend/${encodeURIComponent(uid)}`
+  );
+  return response.data;
+};
