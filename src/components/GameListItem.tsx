@@ -48,6 +48,7 @@ const GameListItem = ({ aSingleGame }: Props) => {
       removeFromMyGames(found._id!);
     }
   };
+  console.log(aSingleGame.min_playtime, aSingleGame.max_playtime);
   return (
     <div className="GameListItem">
       <img
@@ -65,10 +66,14 @@ const GameListItem = ({ aSingleGame }: Props) => {
           Players: {aSingleGame.min_players}-{aSingleGame.max_players}
         </p>
       )}
-
-      <p>
-        Playtime: {aSingleGame.min_playtime}-{aSingleGame.max_playtime}
-      </p>
+      {aSingleGame.min_playtime === aSingleGame.max_playtime ? (
+        <p>Playtime: {aSingleGame.min_playtime} minutes</p>
+      ) : (
+        <p>
+          Playtime: {aSingleGame.min_playtime}-{aSingleGame.max_playtime}{" "}
+          minutes
+        </p>
+      )}
       {user && (
         <div>
           {!checkMyGames() ? (
