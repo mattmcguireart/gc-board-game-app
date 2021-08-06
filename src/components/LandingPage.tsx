@@ -1,24 +1,17 @@
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 import { AuthContext } from "../context/auth-context";
-import Dashboard from "./Dashboard";
 import "./LandingPage.css";
-import Preferences from "./Preferences";
 
 const LandingPage = () => {
   const { user } = useContext(AuthContext);
 
   return (
     <div className="LandingPage">
-      {user ? (
-        <div>
-          <Dashboard />
-        </div>
-      ) : (
-        <div>
-          <p>Select your preferences, or sign in</p>
-          <Preferences />
-        </div>
-      )}
+      <h2>Welcome to GameQuest</h2>
+      <p>This is an app where ...</p>
+      <Link to="/search">Search</Link>
+      <Link to="/preferences">Get recommendations</Link>
     </div>
   );
 };

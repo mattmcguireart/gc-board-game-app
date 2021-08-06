@@ -1,7 +1,7 @@
 .GameListItem {
   border: 2px solid black;
   border-radius: 10px;
-  width: 27vw;
+  width: 90vw;
   margin: 20px;
   list-style: none;
   display: flex;
@@ -14,4 +14,14 @@
 
 .GameListItem .thumb-img {
   width: 30%;
+}
+
+.GameListItem .gameButtons {
+  margin: 4px;
+}
+
+@media only screen and (min-width: 768px) {
+  .GameListItem {
+    width: 27vw;
+  }
 }

@@ -13,6 +13,7 @@ const GameListItem = ({ aSingleGame }: Props) => {
   const { user } = useContext(AuthContext);
   const { addToMyGames, userGames, removeFromMyGames } =
     useContext(GamesContext);
+  console.log(userGames);
   const checkMyGames = () => {
     return userGames.some(
       (game) =>
@@ -36,6 +37,7 @@ const GameListItem = ({ aSingleGame }: Props) => {
     });
     if (found) {
       removeFromMyGames(found._id!);
+      console.log("test");
     }
   };
   const deleteFromWishlist = (): void => {
@@ -48,7 +50,26 @@ const GameListItem = ({ aSingleGame }: Props) => {
       removeFromMyGames(found._id!);
     }
   };
-  console.log(aSingleGame.min_playtime, aSingleGame.max_playtime);
+
+  const addGameToMyGames = async () => {
+    const duplicate = { ...aSingleGame };
+    duplicate.wish_list = false;
+    duplicate.my_games_list = true;
+    duplicate.uid = user!.uid;
+    delete duplicate._id;
+    console.log(duplicate);
+    addToMyGames(duplicate);
+  };
+
+  const addGameToWishList = async () => {
+    const duplicate = { ...aSingleGame };
+    duplicate.wish_list = true;
+    duplicate.my_games_list = false;
+    duplicate.uid = user!.uid;
+    delete duplicate._id;
+    addToMyGames(duplicate);
+  };
+
   return (
     <li className="GameListItem">
       <img
@@ -76,37 +97,26 @@ const GameListItem = ({ aSingleGame }: Props) => {
       )}
       {user && (
         <div>
-          {!checkMyGames() ? (
-            <button
-              onClick={() =>
-                addToMyGames({
-                  ...aSingleGame,
-                  uid: user!.uid,
-                  my_games_list: true,
-                })
-              }
-            >
+          {!checkMyGames() && (
+            <button className="gameButtons" onClick={addGameToMyGames}>
               Add to My Games
             </button>
-          ) : (
-            <button onClick={() => deleteFromMyGames()}>
+          )}
+          {checkMyGames() && (
+            <button className="gameButtons" onClick={() => deleteFromMyGames()}>
               Remove from My Games
             </button>
           )}
-          {!checkWishList() ? (
-            <button
-              onClick={() =>
-                addToMyGames({
-                  ...aSingleGame,
-                  uid: user?.uid,
-                  wish_list: true,
-                })
-              }
-            >
+          {!checkWishList() && !checkMyGames() && (
+            <button className="gameButtons" onClick={addGameToWishList}>
               Add to My Wishlist
             </button>
-          ) : (
-            <button onClick={() => deleteFromWishlist()}>
+          )}
+          {checkWishList() && (
+            <button
+              className="gameButtons"
+              onClick={() => deleteFromWishlist()}
+            >
               Remove from my Wishlist
             </button>
           )}
