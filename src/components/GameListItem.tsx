@@ -50,7 +50,7 @@ const GameListItem = ({ aSingleGame }: Props) => {
   };
   console.log(aSingleGame.min_playtime, aSingleGame.max_playtime);
   return (
-    <div className="GameListItem">
+    <li className="GameListItem">
       <img
         className="thumb-img"
         src={aSingleGame.thumb_url}
@@ -112,7 +112,7 @@ const GameListItem = ({ aSingleGame }: Props) => {
           )}
         </div>
       )}
-    </div>
+    </li>
   );
 };
 

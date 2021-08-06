@@ -1,0 +1,33 @@
+.Dashboard {
+  background-color: #ccd7fd;
+  font-family: "Inter", sans-serif;
+  color: #251a6c;
+  height: 90%;
+}
+
+.Dashboard .footer {
+  background-color: #99f36f;
+  height: 100px;
+}
+
+.Dashboard .recommend {
+  text-decoration: none;
+  background-color: #251a6c;
+  color: white;
+  border: none;
+  padding: 10px;
+  margin: 10px;
+  font-family: "Inter", sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.Dashboard .title {
+  font-size: 35pt;
+  font-weight: bold;
+  padding: 20;
+}
+
+@media only screen and (min-width: 768px) {
+}

@@ -1,4 +1,5 @@
-import { useContext, useState } from "react";
+import React, { useContext, useState } from "react";
+import { Link } from "react-router-dom";
 import { AuthContext } from "../context/auth-context";
 import GamesContext from "../context/GamesContext";
 import Game from "../models/Game";
@@ -13,7 +14,9 @@ const Dashboard = () => {
     useContext(GamesContext);
   const [recommendations, setRecommendations] = useState<any>([]);
   const [recommendation, setRecommendation] = useState<any>();
+  const [tab, setTab] = useState<string>("all");
   const recommend = async () => {
+    setTab("recommend");
     if (!recommendation) {
       const [averages] = await getAverages(user!.uid);
       const search: any = {};
@@ -34,21 +37,46 @@ const Dashboard = () => {
 
   return (
     <div className="Dashboard">
+      <div>
+        <button onClick={() => setTab("all")}>All</button>
+        <button onClick={() => setTab("myGames")}>My Games</button>
+        <button onClick={() => setTab("wishlist")}>Wishlist</button>
+        <button onClick={recommend}>Recommend A Game</button>
+      </div>
+      {tab === "all" && (
+        <>
+          <h3 className="title">My Games</h3>
+          <GameList games={myGames} />
+          <h3 className="title">Wishlist</h3>
+          <GameList games={wishlist} />
+        </>
+      )}
+
       {/* my feed -- from Preferences */}
-
-      {/* my games list */}
-      <h3 className="title">My Games</h3>
-
-      <GameList games={myGames} />
+      {tab === "myGames" && (
+        <>
+          <h3 className="title">My Games</h3>
+          <GameList games={myGames} />
+        </>
+      )}
 
       {/* wishlist */}
-      <h3>Wishlist</h3>
-      <GameList games={wishlist} />
+      {tab === "wishlist" && (
+        <>
+          <h3 className="title">Wishlist</h3>
+          <GameList games={wishlist} />
+        </>
+      )}
 
       {/* recommend me a game */}
-      <h3>Get a Boardgame Recommendation</h3>
-      <button onClick={recommend}>Recommend!</button>
-      {recommendation && <GameListItem aSingleGame={recommendation} />}
+      {tab === "recommend" && (
+        <>
+          <h3 className="title"> Get a Boardgame Recommendation</h3>
+          {recommendation && <GameListItem aSingleGame={recommendation} />}
+        </>
+      )}
+
+      <div className="footer"></div>
     </div>
   );
 };
