@@ -1,0 +1,29 @@
+.PreferenceListItem {
+  border: 2px solid black;
+  border-radius: 10px;
+  width: 27vw;
+  margin: 20px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+}
+
+.selected {
+  border: 2px solid teal;
+  border-radius: 10px;
+}
+
+.PreferenceListItem .thumbImg {
+  width: 100%;
+  border-radius: 10px;
+}
+
+@media only screen and (min-width: 768px) {
+  .PreferenceListItem {
+    width: 27vw;
+    margin: 20px;
+  }
+}
