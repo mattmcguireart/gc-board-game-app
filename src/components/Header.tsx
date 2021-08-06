@@ -9,24 +9,29 @@ const Header = () => {
   return (
     <header className="Header">
       <div className="title">
-        <h1>GameQuest</h1>
-        <h2>A board game suggestion app</h2>
+        <h1 className="headerh1">GameQuest</h1>
+        <h2 className="headerh2">A Board Game Suggestion App</h2>
       </div>
-      <nav>
-        <Link to="/search">Search</Link>
-        <Link to="/">Dashboard</Link>
-      </nav>
+      <div className="content">
+        <nav className="Nav">
+          <Link className="searchLink" to="/search">
+            Search
+          </Link>
+        </nav>
 
-      {user ? (
-        <div>
-          <p>{user.displayName}</p>
-          <button onClick={signOut}>Sign Out</button>
-        </div>
-      ) : (
-        <div>
-          <button onClick={signInWithGoogle}>Sign in with Google</button>
-        </div>
-      )}
+        {user ? (
+          <div className="userTrue">
+            <Link className="dashboardLink" to="/">
+              Dashboard
+            </Link>
+            <button onClick={signOut}>Sign Out</button>
+          </div>
+        ) : (
+          <div className="signIn">
+            <button onClick={signInWithGoogle}>Sign in</button>
+          </div>
+        )}
+      </div>
     </header>
   );
 };
