@@ -1,3 +1,17 @@
+.GameListItem {
+  border: 2px solid black;
+  border-radius: 10px;
+  width: 27vw;
+  margin: 20px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  background-color: white;
+}
+
 .GameListItem .thumb-img {
   width: 30%;
 }

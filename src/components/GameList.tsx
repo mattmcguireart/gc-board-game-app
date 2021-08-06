@@ -9,13 +9,11 @@ interface Props {
 
 const GameList = ({ games }: Props) => {
   return (
-    <div className="GameList">
-      <ul>
-        {games.map((game) => {
-          return <GameListItem aSingleGame={game} key={game.id} />;
-        })}
-      </ul>
-    </div>
+    <ul className="GameList">
+      {games.map((game) => {
+        return <GameListItem aSingleGame={game} key={game.id} />;
+      })}
+    </ul>
   );
 };
 

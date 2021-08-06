@@ -1,0 +1,4 @@
+.GameList {
+  display: flex;
+  flex-wrap: wrap;
+}
