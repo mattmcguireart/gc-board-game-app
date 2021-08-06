@@ -23,7 +23,7 @@ const Details = () => {
       <img src={game?.image_url} alt={`${game?.name}`} />
       <p>{game?.description_preview}</p>
       <p>
-        Number of Players: {game?.min_players} - {game?.max_players}
+        Number of Players: {game?.min_players} - {game?.max_players} players
       </p>
       <p>
         Average playtime: {game?.min_playtime} - {game?.max_playtime} minutes
