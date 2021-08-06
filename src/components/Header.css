@@ -3,4 +3,36 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-decoration: none;
+}
+
+.Header .Nav {
+  display: flex;
+}
+
+.Header .content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+  margin: 0px 15px;
+}
+
+.Header .dashboardLink {
+  padding: 5px;
+  text-decoration: none;
+}
+
+.Header .searchLink {
+  text-decoration: none;
+}
+
+.Header .headerh1 {
+  text-decoration: underline;
+}
+.Header .headerh2 {
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+@media screen and (min-width: 768px) {
 }
