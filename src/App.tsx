@@ -10,6 +10,7 @@ import Dashboard from "./components/Dashboard";
 import Details from "./components/Details";
 import Header from "./components/Header";
 import LandingPage from "./components/LandingPage";
+import Preferences from "./components/Preferences";
 import Search from "./components/Search";
 import SearchReturn from "./components/SearchReturn";
 
@@ -24,6 +25,9 @@ function App() {
           </Route>
           <Route path="/dashboard" exact>
             <Dashboard />
+          </Route>
+          <Route path="/preferences">
+            <Preferences />
           </Route>
           <Route path="/search" exact>
             <Search />

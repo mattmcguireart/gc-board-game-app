@@ -1,0 +1,4 @@
+.Preferences .preference-list {
+  display: flex;
+  flex-wrap: wrap;
+}
