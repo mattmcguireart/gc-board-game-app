@@ -37,7 +37,8 @@ const Dashboard = () => {
       {/* my feed -- from Preferences */}
 
       {/* my games list */}
-      <h3>My Games</h3>
+      <h3 className="title">My Games</h3>
+
       <GameList games={myGames} />
 
       {/* wishlist */}
