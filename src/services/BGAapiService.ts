@@ -6,7 +6,6 @@ const baseUrl = process.env.REACT_APP_API_URL;
 
 export const getGameSearch = async (search: any): Promise<BGAResponse> => {
   let params: any = { ...search, client_id: "1FoN8rvM9B" };
-
   const response = await axios.get(
     "https://api.boardgameatlas.com/api/search?",
     { params }

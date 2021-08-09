@@ -26,12 +26,14 @@ const GamesContextProvider = ({ children }: Props) => {
         setWishlist(data.filter((game) => game.wish_list));
       });
     }
-  }, [user, userGames]);
+  }, [user]);
 
   const addToMyGames = async (game: Game): Promise<void> => {
     await postGameToList(game);
     getGameList(user!.uid).then((data) => {
       setUserGames(data);
+      setMyGames(data.filter((game) => game.my_games_list));
+      setWishlist(data.filter((game) => game.wish_list));
     });
   };
 
@@ -39,6 +41,8 @@ const GamesContextProvider = ({ children }: Props) => {
     await removeGameFromList(id);
     getGameList(user!.uid).then((data) => {
       setUserGames(data);
+      setMyGames(data.filter((game) => game.my_games_list));
+      setWishlist(data.filter((game) => game.wish_list));
     });
   };
 

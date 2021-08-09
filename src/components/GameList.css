@@ -1,4 +1,7 @@
 .GameList {
   display: flex;
   flex-wrap: wrap;
+  width: 100%;
+  background-color: lightgray;
+  justify-content: space-evenly;
 }

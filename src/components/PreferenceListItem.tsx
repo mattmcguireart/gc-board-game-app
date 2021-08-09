@@ -6,17 +6,22 @@ import "./PreferenceListItem.css";
 
 interface Props {
   suggestion: Game;
+  addToPreferredGames: (game: Game) => void;
+  removeFromPreferredGames: (id: string) => void;
+  preferredGames: Game[];
 }
 
-const PreferenceListItem = ({ suggestion }: Props) => {
-  const { preferredGames, addToPreferredGames, removeFromPreferredGames } =
-    useContext(PreferencesContext);
+const PreferenceListItem = ({
+  suggestion,
+  addToPreferredGames,
+  removeFromPreferredGames,
+  preferredGames,
+}: Props) => {
   const handleClick = () => {
     if (checkPreferences()) {
       removeFromPreferredGames(suggestion.id);
     } else {
       addToPreferredGames(suggestion);
-      console.log(preferredGames);
     }
   };
 
@@ -34,9 +39,7 @@ const PreferenceListItem = ({ suggestion }: Props) => {
         src={suggestion.thumb_url}
         alt={`Game Thumbnail for ${suggestion.name}`}
       />
-      <h2>
-        <Link to={`/details/${suggestion.id}`}>{suggestion.name}</Link>
-      </h2>
+      <h2>{suggestion.name}</h2>
       {suggestion.min_players === suggestion.max_players ? (
         <p>Players: {suggestion.min_players}</p>
       ) : (

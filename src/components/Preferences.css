@@ -1,4 +1,15 @@
+.Preferences {
+  background-color: lightgray;
+}
+
 .Preferences .preference-list {
   display: flex;
   flex-wrap: wrap;
+}
+
+.Preferences .prefButton {
+  position: fixed;
+  right: 30px;
+  bottom: 100px;
+  z-index: 9999;
 }

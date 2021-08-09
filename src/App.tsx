@@ -35,7 +35,7 @@ function App() {
           <Route path="/results" exact>
             <SearchReturn />
           </Route>
-          <Route path="/details/:id">
+          <Route path="/details/:id" exact>
             <Details />
           </Route>
           <Route path="/">

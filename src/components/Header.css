@@ -1,30 +1,38 @@
+.Header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  height: 125px;
+  background-color: #ccd7fd;
+  border-bottom: 10px solid #99f36f;
+  position: relative;
+}
+
 .Header .title {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-decoration: none;
+  color: #251a6c;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.Header .Nav {
+.Header .nav {
   display: flex;
-}
-
-.Header .content {
-  display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: space-between;
-  text-decoration: none;
-  margin: 0px 15px;
+  align-items: center;
+  padding: 10px 0;
+  margin: 5px 0;
 }
 
-.Header .dashboardLink {
-  padding: 5px;
-  text-decoration: none;
-}
-
-.Header .searchLink {
-  text-decoration: none;
+.Header .link {
+  padding: 10px 0;
 }
 
 .Header .headerh1 {
@@ -32,7 +40,12 @@
 }
 .Header .headerh2 {
   font-size: 12px;
-  margin-bottom: 10px;
 }
+
+.Header .castleLogo {
+  height: 100%;
+  transform: translate(0px, 10px);
+}
+
 @media screen and (min-width: 768px) {
 }
