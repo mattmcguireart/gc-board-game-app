@@ -13,7 +13,6 @@ const GameListItem = ({ aSingleGame }: Props) => {
   const { user } = useContext(AuthContext);
   const { addToMyGames, userGames, removeFromMyGames } =
     useContext(GamesContext);
-  console.log(userGames);
   const checkMyGames = () => {
     return userGames.some(
       (game) =>
@@ -52,6 +51,7 @@ const GameListItem = ({ aSingleGame }: Props) => {
   };
 
   const addGameToMyGames = async () => {
+    deleteFromWishlist();
     const duplicate = { ...aSingleGame };
     duplicate.wish_list = false;
     duplicate.my_games_list = true;

@@ -22,14 +22,11 @@ const GamesContextProvider = ({ children }: Props) => {
     if (user) {
       getGameList(user.uid).then((data) => {
         setUserGames(data);
+        setMyGames(data.filter((game) => game.my_games_list));
+        setWishlist(data.filter((game) => game.wish_list));
       });
-      if (userGames) {
-        setMyGames(userGames.filter((game) => game.my_games_list));
-        setWishlist(userGames.filter((game) => game.wish_list));
-        console.log(userGames);
-      }
     }
-  }, [user, userGames.length]);
+  }, [user, userGames]);
 
   const addToMyGames = async (game: Game): Promise<void> => {
     await postGameToList(game);

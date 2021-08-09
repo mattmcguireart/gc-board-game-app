@@ -1,8 +1,6 @@
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
 import { AuthContext } from "../context/auth-context";
 import GamesContext from "../context/GamesContext";
-import Game from "../models/Game";
 import { getAverages, getGameSearch } from "../services/BGAapiService";
 import "./Dashboard.css";
 import GameList from "./GameList";
@@ -10,8 +8,7 @@ import GameListItem from "./GameListItem";
 
 const Dashboard = () => {
   const { user } = useContext(AuthContext);
-  const { addToMyGames, userGames, removeFromMyGames, wishlist, myGames } =
-    useContext(GamesContext);
+  const { wishlist, myGames } = useContext(GamesContext);
   const [recommendations, setRecommendations] = useState<any>([]);
   const [recommendation, setRecommendation] = useState<any>();
   const [tab, setTab] = useState<string>("all");
@@ -34,7 +31,7 @@ const Dashboard = () => {
       );
     }
   };
-
+  console.log(myGames);
   return (
     <div className="Dashboard">
       <div>
