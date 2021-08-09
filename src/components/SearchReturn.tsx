@@ -13,6 +13,7 @@ const SearchReturn = () => {
 
   useEffect(() => {
     getGameSearch(searchParams).then((data) => {
+      console.log(data.games);
       setGames(data.games);
     });
   }, []);

@@ -70,7 +70,6 @@ const Search = () => {
             <option value="">Pick A Category</option>
             <option value="KUBCKBkGxV">Adventure </option>
             <option value="eFaACC6y2c">Apocalyptic </option>
-            <option value="wpItJuRDiz">Banking </option>
             <option value="HKaYVNIxAJ">Children's Games </option>
             <option value="ODWOjWAJj3">City Building </option>
             <option value="329DxyFL9D">Civilization </option>
@@ -192,7 +191,7 @@ const Search = () => {
           />
         </div>
         <div>
-          <p>Limit Results</p>
+          <p>Limit Results:</p>
           <input
             type="radio"
             id="10"
