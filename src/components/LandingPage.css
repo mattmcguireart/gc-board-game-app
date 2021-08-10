@@ -3,4 +3,19 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 100%;
+}
+.LandingPage .links {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.LandingPage .link {
+  padding: 10px;
+}
+.LandingPage .paragraph {
+  margin-top: 10px;
+  text-align: center;
+}
+@media only screen and (min-width: 768px) {
 }

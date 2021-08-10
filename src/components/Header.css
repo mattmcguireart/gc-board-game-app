@@ -34,6 +34,7 @@
 
 .Header .link {
   padding: 10px 10px 0 0;
+  font-size: 13px;
 }
 
 .Header .headerh1 {
@@ -53,4 +54,17 @@
 }
 
 @media screen and (min-width: 768px) {
+  .Header .title {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .Header {
+    justify-content: space-between;
+  }
+  .Header .link {
+    padding: 10px 10px 0 0;
+    font-size: 20px;
+  }
 }

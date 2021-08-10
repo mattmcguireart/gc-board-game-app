@@ -8,10 +8,32 @@ const LandingPage = () => {
 
   return (
     <div className="LandingPage">
-      <h2>Welcome to GameQuest</h2>
-      <p>This is an app where ...</p>
-      <Link to="/search">Search</Link>
-      <Link to="/preferences">Get recommendations</Link>
+      <div className="text">
+        <h2>Your new favorite boardgame is just a click away...</h2>
+        <p className="paragraph p1">
+          GameQuest is your destination to find what's new in the crunchy,
+          fiddly, and/or hot world of boardgames.
+        </p>
+        <p className="paragraph p2">
+          Click Get Recommendations to select games that you already love --
+          we'll generate a list of games that fit your interests.
+        </p>
+        <p className="paragraph p3">
+          Sign in and add games to your lists in order to get recommendations
+          based on what's on your shelf, and what's on your wishlist.
+        </p>
+        <p className="paragraph p4">
+          Or, click Search to browse for specific games.
+        </p>
+      </div>
+      <div className="links">
+        <Link className="link" to="/search">
+          Search
+        </Link>
+        <Link className="link" to="/preferences">
+          Get Recommendations
+        </Link>
+      </div>
     </div>
   );
 };

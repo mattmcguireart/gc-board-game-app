@@ -3,9 +3,10 @@ import BGAResponse from "../models/BGAResponse";
 import Game from "../models/Game";
 
 const baseUrl = process.env.REACT_APP_API_URL;
+const client_id = process.env.REACT_APP_BGA_CLIENT_ID;
 
 export const getGameSearch = async (search: any): Promise<BGAResponse> => {
-  let params: any = { ...search, client_id: "1FoN8rvM9B" };
+  let params: any = { ...search, client_id: client_id };
   const response = await axios.get(
     "https://api.boardgameatlas.com/api/search?",
     { params }
