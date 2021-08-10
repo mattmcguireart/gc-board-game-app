@@ -14,30 +14,32 @@ const Header = () => {
         alt="castle-logo"
         className="castleLogo headerChild"
       />
-      <div className="title">
-        <Link to="/">
-          <h1 className="headerh1">GameQuest</h1>
-        </Link>
-        <h2 className="headerh2">A Board Game Suggestion App</h2>
+      <div className="title-nav-container">
+        <div className="title">
+          <Link to="/">
+            <h1 className="headerh1">GameQuest</h1>
+          </Link>
+          <h2 className="headerh2">A Board Game Suggestion App</h2>
+        </div>
+        {user ? (
+          <nav className="nav">
+            <Link className="link" to="/search">
+              Search
+            </Link>
+            <Link className="link" to="/dashboard">
+              Dashboard
+            </Link>
+            <button className="button" onClick={signOut}>Sign Out</button>
+          </nav>
+        ) : (
+          <nav className="nav">
+            <Link className="link" to="/search">
+              Search
+            </Link>
+            <button className="button" onClick={signInWithGoogle}>Sign in</button>
+          </nav>
+        )}
       </div>
-      {user ? (
-        <nav className="nav userTrue headerChild">
-          <Link className="link" to="/search">
-            Search
-          </Link>
-          <Link className="link" to="/dashboard">
-            Dashboard
-          </Link>
-          <button onClick={signOut}>Sign Out</button>
-        </nav>
-      ) : (
-        <nav className="nav signIn headerChild">
-          <Link className="link" to="/search">
-            Search
-          </Link>
-          <button onClick={signInWithGoogle}>Sign in</button>
-        </nav>
-      )}
     </header>
   );
 };

@@ -1,0 +1,31 @@
+.Details .title {
+  color: #251a6c;
+  font-size: 40pt;
+  font-weight: bold;
+  padding: 10px;
+}
+
+.Details p {
+  color: #251a6c;
+  padding: 10px;
+  font-size: 35;
+  font-weight: bold;
+}
+
+.Details {
+  background-color: white;
+}
+
+.Details body {
+  background-color: white;
+}
+
+.Details .img {
+  width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+  .Details .img {
+    width: 500px;
+  }
+}
