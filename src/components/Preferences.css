@@ -1,7 +1,3 @@
-.Preferences {
-  background-color: lightgray;
-}
-
 .Preferences .preference-list {
   display: flex;
   flex-wrap: wrap;

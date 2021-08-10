@@ -17,18 +17,25 @@ const Details = () => {
       setGame(data.games[0]);
     });
   }, [id]);
+  console.log(game);
   return (
     <div className="Details">
-      <h2>{game?.name}</h2>
-      <img src={game?.image_url} alt={`${game?.name}`} />
-      <p>{game?.description_preview}</p>
+      <h2 className="title">{game?.name}</h2>
+      <img className="img" src={game?.image_url} alt={`${game?.name}`} />
       <p>
         Number of Players: {game?.min_players} - {game?.max_players} players
       </p>
       <p>
         Average playtime: {game?.min_playtime} - {game?.max_playtime} minutes
       </p>
-      <p>{game?.msrp_text}</p>
+      <p>MSRP: {game?.msrp_text}</p>
+      <p>Minimum Age: {game?.min_age}</p>
+      <p>{game?.description_preview}</p>
+
+      {game?.primary_publisher && (
+        <p>Publisher: {game?.primary_publisher.name}</p>
+      )}
+      <p>Year: {game?.year_published}</p>
     </div>
   );
 };

@@ -50,7 +50,7 @@ const Search = () => {
       <h2>Search</h2>
       <form onSubmit={handleSubmit} className="search-form">
         <div>
-          <label htmlFor="name">Search by Name</label>
+          <label htmlFor="name">Search by Name: </label>
           <input
             type="text"
             name="name"
@@ -60,7 +60,7 @@ const Search = () => {
           />
         </div>
         <div>
-          <label htmlFor="categories">Categories</label>
+          <label htmlFor="categories">Categories: </label>
           <select
             name="categories"
             id="categories"
@@ -107,7 +107,7 @@ const Search = () => {
           </select>
         </div>
         <div>
-          <label htmlFor="mechanics">Mechanics</label>
+          <label htmlFor="mechanics">Mechanics: </label>
           <select
             name="mechanics"
             id="mechanics"
@@ -156,6 +156,7 @@ const Search = () => {
             max="8"
             value={minPlayers}
             onChange={(e) => setMinPlayers(parseInt(e.target.value))}
+            className="slider"
           />
           <label htmlFor="max-players">Maximum Players: {maxPlayers}</label>
           <input
@@ -166,6 +167,7 @@ const Search = () => {
             max="8"
             value={maxPlayers}
             onChange={(e) => setMaxPlayers(parseInt(e.target.value))}
+            className="slider"
           />
         </div>
         <div>
