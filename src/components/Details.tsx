@@ -17,7 +17,7 @@ const Details = () => {
       setGame(data.games[0]);
     });
   }, [id]);
-  console.log(game);
+
   return (
     <div className="Details">
       <h2 className="title">{game?.name}</h2>
@@ -29,13 +29,12 @@ const Details = () => {
         Average playtime: {game?.min_playtime} - {game?.max_playtime} minutes
       </p>
       <p>MSRP: {game?.msrp_text}</p>
-      {/* <p>Minimum Age: {game?.min_age}</p>
+      {/* <p>Minimum Age: {game?.min_age}</p> */}
       <p>{game?.description_preview}</p>
-
       {game?.primary_publisher && (
         <p>Publisher: {game?.primary_publisher.name}</p>
       )}
-      <p>Year: {game?.year_published}</p> */}
+      <p>Year: {game?.year_published}</p>
     </div>
   );
 };

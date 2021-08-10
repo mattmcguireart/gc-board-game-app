@@ -19,7 +19,7 @@ export default interface Game {
   uid?: string;
   my_games_list?: boolean;
   wish_list?: boolean;
-  // min_age?: number;
-  // year_published?: number;
-  // primary_publisher?: any;
+  min_age?: number;
+  year_published?: number;
+  primary_publisher?: any;
 }

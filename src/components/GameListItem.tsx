@@ -36,7 +36,6 @@ const GameListItem = ({ aSingleGame }: Props) => {
     });
     if (found) {
       removeFromMyGames(found._id!);
-      console.log("test");
     }
   };
   const deleteFromWishlist = (): void => {
@@ -57,7 +56,6 @@ const GameListItem = ({ aSingleGame }: Props) => {
     duplicate.my_games_list = true;
     duplicate.uid = user!.uid;
     delete duplicate._id;
-    console.log(duplicate);
     addToMyGames(duplicate);
   };
 
@@ -96,7 +94,7 @@ const GameListItem = ({ aSingleGame }: Props) => {
         </p>
       )}
       {user && (
-        <div>
+        <div className="buttonContainer">
           {!checkMyGames() && (
             <button className="gameButtons" onClick={addGameToMyGames}>
               Add to My Games

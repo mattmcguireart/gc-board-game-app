@@ -1,6 +1,3 @@
-import { useContext } from "react";
-import { Link } from "react-router-dom";
-import PreferencesContext from "../context/PreferencesContext";
 import Game from "../models/Game";
 import "./PreferenceListItem.css";
 

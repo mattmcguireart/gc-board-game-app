@@ -1,6 +1,5 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
-import PreferencesContext from "../context/PreferencesContext";
 import Game from "../models/Game";
 import { getGameSearch } from "../services/BGAapiService";
 import PreferenceListItem from "./PreferenceListItem";
@@ -28,7 +27,6 @@ const Preferences = () => {
       parseInt(findAverage(preferredGames, "min_playtime")) - 1;
     queryStringParameter.min_age =
       parseInt(findAverage(preferredGames, "min_age")) - 1;
-    console.log(queryStringParameter);
     history.push(
       "/results?" + new URLSearchParams(queryStringParameter).toString()
     );
@@ -53,8 +51,11 @@ const Preferences = () => {
   }, []);
   return (
     <div className="Preferences">
-      <h3>Suggestions</h3>
-      <p>Select five games to get back a list of recommended games!</p>
+      <div className="text">
+        <h3>Suggestions</h3>
+        <p>Select five games to get back a list of recommended games!</p>
+      </div>
+
       <ul className="preference-list">
         {suggestions.map((suggestion) => {
           return (

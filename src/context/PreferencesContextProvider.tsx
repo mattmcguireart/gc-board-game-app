@@ -31,12 +31,11 @@ const PreferencesContextProvider = ({ children }: Props) => {
       preferredGames,
       "max_playtime"
     );
-    // queryStringParameter.gt_min_playtime = findAverage(
-    //   preferredGames,
-    //   "min_playtime"
-    // );
+    queryStringParameter.gt_min_playtime = findAverage(
+      preferredGames,
+      "min_playtime"
+    );
     queryStringParameter.min_age = findAverage(preferredGames, "min_age");
-    console.log(queryStringParameter);
     history.push(
       "/results?" + new URLSearchParams(queryStringParameter).toString()
     );
