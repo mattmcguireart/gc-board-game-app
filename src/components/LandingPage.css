@@ -1,21 +1,36 @@
+.landingContainer {
+  height: 100%;
+}
+
 .LandingPage {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
+
+.LandingPage .text {
+  margin: 10px;
+}
+
 .LandingPage .links {
   display: flex;
   justify-content: space-around;
   align-items: center;
 }
+
 .LandingPage .link {
   padding: 10px;
 }
+
 .LandingPage .paragraph {
-  margin-top: 10px;
-  text-align: center;
+  margin-top: 15px;
 }
+
 @media only screen and (min-width: 768px) {
 }

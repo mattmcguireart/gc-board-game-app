@@ -8,7 +8,7 @@ import GameListItem from "./GameListItem";
 
 const Dashboard = () => {
   const { user } = useContext(AuthContext);
-  const { wishlist, myGames } = useContext(GamesContext);
+  const { userGames, wishlist, myGames } = useContext(GamesContext);
   const [recommendations, setRecommendations] = useState<any>([]);
   const [recommendation, setRecommendation] = useState<any>();
   const [tab, setTab] = useState<string>("all");
@@ -31,14 +31,21 @@ const Dashboard = () => {
       );
     }
   };
-  console.log(myGames);
   return (
     <div className="Dashboard">
-      <div>
-        <button onClick={() => setTab("all")}>All</button>
-        <button onClick={() => setTab("myGames")}>My Games</button>
-        <button onClick={() => setTab("wishlist")}>Wishlist</button>
-        <button onClick={recommend}>Recommend A Game</button>
+      <div className="buttonContainer">
+        <button className="button" onClick={() => setTab("all")}>
+          All
+        </button>
+        <button className="button" onClick={() => setTab("myGames")}>
+          My Games
+        </button>
+        <button className="button" onClick={() => setTab("wishlist")}>
+          Wishlist
+        </button>
+        <button className="button" onClick={recommend}>
+          Recommend A Game
+        </button>
       </div>
       {tab === "all" && (
         <>
@@ -48,32 +55,24 @@ const Dashboard = () => {
           <GameList games={wishlist} />
         </>
       )}
-
-      {/* my feed -- from Preferences */}
       {tab === "myGames" && (
         <>
           <h3 className="title">My Games</h3>
           <GameList games={myGames} />
         </>
       )}
-
-      {/* wishlist */}
       {tab === "wishlist" && (
         <>
           <h3 className="title">Wishlist</h3>
           <GameList games={wishlist} />
         </>
       )}
-
-      {/* recommend me a game */}
-      {tab === "recommend" && (
+      {tab === "recommend" && userGames.length > 5 && (
         <>
           <h3 className="title"> Get a Boardgame Recommendation</h3>
           {recommendation && <GameListItem aSingleGame={recommendation} />}
         </>
       )}
-
-      <div className="footer"></div>
     </div>
   );
 };
