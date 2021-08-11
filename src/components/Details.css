@@ -5,6 +5,13 @@
   padding: 10px;
 }
 
+.Details .titleImg {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 10px;
+}
+
 .Details p {
   color: #251a6c;
   padding: 10px;
@@ -16,16 +23,18 @@
   background-color: white;
 }
 
-.Details body {
-  background-color: white;
-}
-
 .Details .img {
-  width: 100%;
+  max-height: 40vh;
 }
 
 @media only screen and (min-width: 768px) {
-  .Details .img {
-    width: 500px;
+  .Details .titleImg {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .Details p {
+    padding: 10px 20px;
   }
 }

@@ -76,7 +76,9 @@ const GameListItem = ({ aSingleGame }: Props) => {
         alt={`Game Thumbnail for ${aSingleGame.name}`}
       />
       <h2>
-        <Link to={`/details/${aSingleGame.id}`}>{aSingleGame.name}</Link>
+        <Link to={`/details/${aSingleGame.id}`}>
+          <span className="title">{aSingleGame.name}</span>
+        </Link>
       </h2>
       {aSingleGame.min_players === aSingleGame.max_players ? (
         <p>Players: {aSingleGame.min_players}</p>

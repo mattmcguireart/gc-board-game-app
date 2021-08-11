@@ -52,8 +52,10 @@ const Preferences = () => {
   return (
     <div className="Preferences">
       <div className="text">
-        <h3>Suggestions</h3>
-        <p>Select five games to get back a list of recommended games!</p>
+        <p>
+          Select five or more favorites from the list below to generate a list
+          of recommended boardgames.
+        </p>
       </div>
 
       <ul className="preference-list">

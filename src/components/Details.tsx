@@ -20,16 +20,26 @@ const Details = () => {
 
   return (
     <div className="Details">
-      <h2 className="title">{game?.name}</h2>
-      <img className="img" src={game?.image_url} alt={`${game?.name}`} />
-      <p>
-        Number of Players: {game?.min_players} - {game?.max_players} players
-      </p>
-      <p>
-        Average playtime: {game?.min_playtime} - {game?.max_playtime} minutes
-      </p>
+      <div className="titleImg">
+        <h2 className="title">{game?.name}</h2>
+        <img className="img" src={game?.image_url} alt={`${game?.name}`} />
+      </div>
+      {game?.min_players === game?.max_players ? (
+        <p>Players: {game?.min_players}</p>
+      ) : (
+        <p>
+          Players: {game?.min_players}-{game?.max_players}
+        </p>
+      )}
+      {game?.min_playtime === game?.max_playtime ? (
+        <p>Playtime: {game?.min_playtime} minutes</p>
+      ) : (
+        <p>
+          Playtime: {game?.min_playtime}-{game?.max_playtime} minutes
+        </p>
+      )}
       <p>MSRP: {game?.msrp_text}</p>
-      {/* <p>Minimum Age: {game?.min_age}</p> */}
+      <p>Minimum Age: {game?.min_age}</p>
       <p>{game?.description_preview}</p>
       {game?.primary_publisher && (
         <p>Publisher: {game?.primary_publisher.name}</p>

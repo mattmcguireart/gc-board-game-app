@@ -49,7 +49,7 @@ const Search = () => {
     <div className="Search">
       <h2>Search</h2>
       <form onSubmit={handleSubmit} className="search-form">
-        <div>
+        <div className="input">
           <label htmlFor="name">Search by Name: </label>
           <input
             type="text"
@@ -59,7 +59,7 @@ const Search = () => {
             onChange={(e) => setName(e.target.value)}
           />
         </div>
-        <div>
+        <div className="input">
           <label htmlFor="categories">Categories: </label>
           <select
             name="categories"
@@ -106,7 +106,7 @@ const Search = () => {
             <option value="jX8asGGR6o">Wargame </option>
           </select>
         </div>
-        <div>
+        <div className="input">
           <label htmlFor="mechanics">Mechanics: </label>
           <select
             name="mechanics"
@@ -146,7 +146,7 @@ const Search = () => {
             <option value="fBOTEBUAmV">Worker Placement </option>
           </select>
         </div>
-        <div>
+        <div className="input">
           <label htmlFor="min-players">Minimum Players: {minPlayers}</label>
           <input
             type="range"
@@ -170,7 +170,7 @@ const Search = () => {
             className="slider"
           />
         </div>
-        <div>
+        <div className="input">
           <label htmlFor="min-playtime">Minimum Playtime: {minPlaytime}</label>
           <input
             type="range"
@@ -192,7 +192,7 @@ const Search = () => {
             onChange={(e) => setMaxPlaytime(parseInt(e.target.value))}
           />
         </div>
-        <div>
+        <div className="input">
           <p>Limit Results:</p>
           <input
             type="radio"
