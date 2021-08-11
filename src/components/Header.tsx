@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { AuthContext } from "../context/auth-context";
 import { signInWithGoogle, signOut } from "../firebaseConfig";
 import "./Header.css";
-import castleImg from "../assets/background-castle.svg";
+import castleImg from "../assets/castle_2.svg";
 
 const Header = () => {
   const { user } = useContext(AuthContext);
@@ -29,14 +29,18 @@ const Header = () => {
             <Link className="link" to="/dashboard">
               Dashboard
             </Link>
-            <button className="button" onClick={signOut}>Sign Out</button>
+            <button className="button" onClick={signOut}>
+              Sign Out
+            </button>
           </nav>
         ) : (
           <nav className="nav">
             <Link className="link" to="/search">
               Search
             </Link>
-            <button className="button" onClick={signInWithGoogle}>Sign in</button>
+            <button className="button" onClick={signInWithGoogle}>
+              Sign in
+            </button>
           </nav>
         )}
       </div>

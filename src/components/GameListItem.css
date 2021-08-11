@@ -12,6 +12,10 @@
   background-color: white;
 }
 
+.GameListItem .title {
+  text-decoration: underline;
+}
+
 .GameListItem .thumb-img {
   width: 30%;
 }
@@ -23,6 +27,14 @@
 @media only screen and (min-width: 768px) {
   .GameListItem {
     width: 27vw;
+  }
+
+  .GameListItem .title {
+    text-decoration: none;
+  }
+
+  .GameListItem .title:hover {
+    text-decoration: underline;
   }
 
   .GameListItem .buttonContainer {

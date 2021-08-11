@@ -46,7 +46,7 @@
 
 .Header .castleLogo {
   height: 100%;
-  transform: translate(0px, 10px);
+  transform: translate(0px, 5px);
 }
 
 .Header .button {
@@ -66,5 +66,13 @@
   .Header .link {
     padding: 10px 10px 0 0;
     font-size: 20px;
+  }
+
+  .Header .headerh1 {
+    font-size: 2.5em;
+  }
+
+  .Header .headerh2 {
+    font-size: 15px;
   }
 }

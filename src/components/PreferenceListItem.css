@@ -12,7 +12,11 @@
   background-color: white;
 }
 
-.selected {
+.PreferenceListItem:hover {
+  cursor: pointer;
+}
+
+.PreferenceListItem.selected {
   border: 2px solid lightskyblue;
   border-radius: 10px;
 }

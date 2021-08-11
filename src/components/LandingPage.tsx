@@ -12,15 +12,15 @@ const LandingPage = () => {
             fiddly, and/or hot world of boardgames.
           </p>
           <p className="paragraph p2">
-            Click Get Recommendations to select games that you already love --
-            we'll generate a list of games that fit your interests.
+            Click Get Recommendations to select games that you already love
+            &mdash; we'll generate a list of games that fit your interests.
           </p>
           <p className="paragraph p3">
             Sign in and add to your lists to get recommendations based on what's
             on your shelf.
           </p>
           <p className="paragraph p4">
-            Or, click Search to browse for specific games.
+            Or, click Search to browse for specific boardgames.
           </p>
         </div>
         <div className="links">

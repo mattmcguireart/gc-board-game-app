@@ -19,6 +19,10 @@
   font-size: 0.9em;
 }
 
+.Search .input {
+  padding-bottom: 10px;
+}
+
 .Search .search-button {
   width: 100px;
 }
