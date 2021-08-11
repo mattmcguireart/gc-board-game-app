@@ -16,8 +16,8 @@ const LandingPage = () => {
             we'll generate a list of games that fit your interests.
           </p>
           <p className="paragraph p3">
-            Sign in and add games to your lists in order to get recommendations
-            based on what's on your shelf, and what's on your wishlist.
+            Sign in and add to your lists to get recommendations based on what's
+            on your shelf.
           </p>
           <p className="paragraph p4">
             Or, click Search to browse for specific games.

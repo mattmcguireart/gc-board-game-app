@@ -33,44 +33,50 @@ const Dashboard = () => {
   };
   return (
     <div className="Dashboard">
-      <div className="buttonContainer">
-        <button className="button" onClick={() => setTab("all")}>
+      <div className="tabContainer">
+        <button className="tab" onClick={() => setTab("all")}>
           All
         </button>
-        <button className="button" onClick={() => setTab("myGames")}>
+        <button className="tab" onClick={() => setTab("myGames")}>
           My Games
         </button>
-        <button className="button" onClick={() => setTab("wishlist")}>
+        <button className="tab" onClick={() => setTab("wishlist")}>
           Wishlist
         </button>
-        <button className="button" onClick={recommend}>
+        <button className="tab" onClick={recommend}>
           Recommend A Game
         </button>
       </div>
       {tab === "all" && (
         <>
-          <h3 className="title">My Games</h3>
+          <h3>All Games</h3>
+          <h4 className="title">My Games</h4>
           <GameList games={myGames} />
-          <h3 className="title">Wishlist</h3>
+          <h4 className="title">Wishlist</h4>
           <GameList games={wishlist} />
         </>
       )}
       {tab === "myGames" && (
         <>
-          <h3 className="title">My Games</h3>
+          <h4 className="title">My Games</h4>
           <GameList games={myGames} />
         </>
       )}
       {tab === "wishlist" && (
         <>
-          <h3 className="title">Wishlist</h3>
+          <h4 className="title">Wishlist</h4>
           <GameList games={wishlist} />
         </>
       )}
       {tab === "recommend" && userGames.length > 5 && (
         <>
-          <h3 className="title"> Get a Boardgame Recommendation</h3>
-          {recommendation && <GameListItem aSingleGame={recommendation} />}
+          <h4 className="title"> Get a Boardgame Recommendation</h4>
+          {recommendation && (
+            <div>
+              <GameListItem aSingleGame={recommendation} />
+              <p>{recommendation.description_preview}</p>
+            </div>
+          )}
         </>
       )}
     </div>

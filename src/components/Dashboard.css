@@ -1,7 +1,4 @@
 .Dashboard {
-  background-color: #ccd7fd;
-  font-family: "Inter", sans-serif;
-  color: #251a6c;
   height: 90%;
 }
 
@@ -24,17 +21,24 @@
 }
 
 .Dashboard .title {
-  font-size: 25pt;
+  font-size: 15pt;
   font-weight: bold;
   margin-left: 15px;
 }
 
-.Dashboard .button {
-  margin: 5px 0 0 5px;
+.Dashboard .tab {
+  margin: 15px;
+  font-size: 20px;
 }
 
-.Dashboard .buttonContainer {
+.Dashboard .tabContainer {
   margin-left: 10px;
+}
+
+.Dashboard h3 {
+  font-size: 25px;
+  text-decoration: underline;
+  margin: 0 15px 5px 15px;
 }
 
 @media only screen and (min-width: 768px) {

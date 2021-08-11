@@ -9,9 +9,22 @@
   bottom: 100px;
   z-index: 9999;
   padding: 10px;
+  animation: fadeInAnimation ease 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  opacity: 0;
 }
 
 .Preferences .text {
   margin: 10px;
   font-size: 16px;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
